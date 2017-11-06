@@ -6,6 +6,10 @@ import json
 import re
 from bs4 import BeautifulSoup
 
+<<<<<<< HEAD:StockSpider.py
+=======
+
+>>>>>>> origin/master:stock.py
 class FinancialData():
 
 	def __init__(self):
@@ -43,6 +47,10 @@ class FinancialData():
 			'Accept-Encoding': 'gzip, deflate',
 			'Accept-Language': 'zh-CN,zh;q=0.8',
 			'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.109 Safari/537.36'}
+<<<<<<< HEAD:StockSpider.py
+=======
+	
+>>>>>>> origin/master:stock.py
 
 	def get_informations(self, url):
 		req = requests.get(url = url, headers = self.headers)
@@ -73,7 +81,10 @@ class FinancialData():
 				each_date_list = []
 		return name,table_name_list,table_date_list,url_list
 
+<<<<<<< HEAD:StockSpider.py
 
+=======
+>>>>>>> origin/master:stock.py
 	def insert_tables(self, name, table_name_list,table_date_list, url_list):
 		#打开数据库连接:host-连接主机地址,port-端口号,user-用户名,passwd-用户密码,db-数据库名,charset-编码
 		conn = pymysql.connect(host='127.0.0.1', port=3306, user='root', passwd='root',db='financialdata',charset='utf8')
