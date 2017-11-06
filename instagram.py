@@ -12,9 +12,9 @@ def get_time():
     return time.strftime('%Y-%m-%d %H:%M:%S  ',time.localtime(time.time()))
 def get_soup(url):
 	try:
-		return BeautifulSoup(urllib2.urlopen(url,timeout=30).read(),"lxml")
+		return BeautifulSoup(urllib2.urlopen(url,timeout=60).read(),"lxml")
 	except Exception as e:
-		pass
+		get_soup(url)
 		print get_time()+' get_soup error \n'+repr(e)
 def get_img(url):
 	soup = get_soup(url)
@@ -22,6 +22,7 @@ def get_img(url):
 		image_tags = soup.find_all('meta',property="og:image")
 		for tag in image_tags:
 			img_url = tag['content']
+			print img_url
 		name_tags = soup.find_all('meta',property="og:description")
 		for tag in name_tags:
 			content = tag['content']
